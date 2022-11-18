@@ -3,6 +3,7 @@ package org.archive.wayback.accesscontrol.staticmap;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.TreeSet;
 
 import org.archive.util.SURT;
@@ -21,7 +22,7 @@ public class StaticListExclusionFilterTest extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		factory = new StaticListExclusionFilterFactory();
-		tmpFile = File.createTempFile("static-map", ".tmp");
+		tmpFile = Files.createTempFile("static-map",".tmp").toFile();
 //		Properties p = new Properties();
 //		p.put("resourceindex.exclusionpath", tmpFile.getAbsolutePath());
 //		factory.init(p);

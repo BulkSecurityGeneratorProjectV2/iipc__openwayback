@@ -23,6 +23,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.httpclient.URIException;
@@ -188,7 +189,7 @@ public class AlphaPartitionedIndexTest extends TestCase {
 	}
 
 	private void createRangeMapFile() throws IOException {
-		rangeMapFile = File.createTempFile("range-map","tmp");
+		rangeMapFile = Files.createTempFile("range-map","tmp").toFile();
 		FileWriter writer = new FileWriter(rangeMapFile);
 		StringBuilder sb = new StringBuilder();
 		sb.append("d cups.com/ zorro.com/ d1 d2\n");

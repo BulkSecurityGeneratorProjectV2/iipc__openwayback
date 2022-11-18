@@ -20,6 +20,7 @@
 package org.archive.wayback.resourcestore.locationdb;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.util.Iterator;
 
 import org.archive.wayback.resourcestore.locationdb.ResourceFileLocationDBLog;
@@ -36,7 +37,7 @@ public class ResoruceFileLocationDBLogTest extends TestCase {
 	ResourceFileLocationDBLog log;
     protected void setUp() throws Exception {
         super.setUp();
-		File tmp = File.createTempFile("fldb","log");
+		File tmp = Files.createTempFile("fldb","log").toFile();
 
 		log = new ResourceFileLocationDBLog(tmp.getAbsolutePath());        
     }
